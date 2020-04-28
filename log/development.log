@@ -11187,3 +11187,1049 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/?utf8=%E2%9C%93&search%5Bflavors%5D%5B%5D=&search%5Bflavors%5D%5B%5D=Hot+Drink&search%5Bstrengths%5D%5B%5D=&search%5Bstrengths%5D%5B%5D=sour&search%5Bstrengths%5D%5B%5D=strong&commit=Search" for ::1 at 2019-07-09 22:11:22 +0800
+Processing by CocktailsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>{"flavors"=>["", "Hot Drink"], "strengths"=>["", "sour", "strong"]}, "commit"=>"Search"}
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (6.1ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails" WHERE EXISTS (SELECT * FROM "taggings" WHERE "taggings"."taggable_id" = "cocktails"."id" AND "taggings"."taggable_type" = 'Cocktail' AND "taggings"."tag_id" IN (SELECT "tags"."id" FROM "tags" WHERE (LOWER("tags"."name") ILIKE 'hot drink' ESCAPE '!' OR LOWER("tags"."name") ILIKE 'sour' ESCAPE '!' OR LOWER("tags"."name") ILIKE 'strong' ESCAPE '!')))[0m
+  ↳ app/views/cocktails/index.html.erb:14
+  [1m[36mActsAsTaggableOn::Tagging Load (0.4ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 158], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 158], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 158], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 164], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (2.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 164], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 164], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.7ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 169], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 169], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 169], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.7ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 179], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 179], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 179], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 185], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 185], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 185], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 186], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 186], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 186], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 199], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 199], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 199], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (3.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 202], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (5.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 202], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 202], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 203], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 203], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (2.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 203], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (1.0ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (4.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 207], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 207], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 207], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.7ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 212], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (3.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 212], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 212], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (1.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 219], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 219], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 219], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.4ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 222], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 222], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 222], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.5ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 228], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 228], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 228], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  Rendered cocktails/index.html.erb within layouts/application (405.2ms)
+Completed 200 OK in 750ms (Views: 588.2ms | ActiveRecord: 106.1ms)
+
+
+Started GET "/serviceworker.js" for ::1 at 2019-07-09 22:11:29 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/serviceworker.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/serviceworker.js" for ::1 at 2019-07-09 22:12:27 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/serviceworker.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/?utf8=%E2%9C%93&search%5Bflavors%5D%5B%5D=&search%5Bflavors%5D%5B%5D=Hot+Drink&search%5Bstrengths%5D%5B%5D=&search%5Bstrengths%5D%5B%5D=sweet&commit=Search" for ::1 at 2019-07-09 22:13:43 +0800
+Processing by CocktailsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>{"flavors"=>["", "Hot Drink"], "strengths"=>["", "sweet"]}, "commit"=>"Search"}
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (1.9ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails" WHERE EXISTS (SELECT * FROM "taggings" WHERE "taggings"."taggable_id" = "cocktails"."id" AND "taggings"."taggable_type" = 'Cocktail' AND "taggings"."tag_id" IN (SELECT "tags"."id" FROM "tags" WHERE (LOWER("tags"."name") ILIKE 'hot drink' ESCAPE '!' OR LOWER("tags"."name") ILIKE 'sweet' ESCAPE '!')))[0m
+  ↳ app/views/cocktails/index.html.erb:14
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 168], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 168], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 168], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 170], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 170], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (2.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 170], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.7ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 180], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 180], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 180], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 182], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (4.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 182], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 182], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 195], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 195], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 195], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 198], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 198], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 198], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (2.0ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 208], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 208], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 208], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 209], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 209], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 209], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (2.0ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 210], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 210], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 210], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 211], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 211], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 211], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.5ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 213], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 213], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 213], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 218], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 218], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 218], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 231], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 231], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 231], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  Rendered cocktails/index.html.erb within layouts/application (130.7ms)
+Completed 200 OK in 184ms (Views: 136.0ms | ActiveRecord: 43.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&search%5Bflavors%5D%5B%5D=&search%5Bflavors%5D%5B%5D=After+Dinner+Cocktail&search%5Bstrengths%5D%5B%5D=&search%5Bstrengths%5D%5B%5D=strong&commit=Search" for ::1 at 2019-07-09 22:13:47 +0800
+Processing by CocktailsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>{"flavors"=>["", "After Dinner Cocktail"], "strengths"=>["", "strong"]}, "commit"=>"Search"}
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (2.0ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails" WHERE EXISTS (SELECT * FROM "taggings" WHERE "taggings"."taggable_id" = "cocktails"."id" AND "taggings"."taggable_type" = 'Cocktail' AND "taggings"."tag_id" IN (SELECT "tags"."id" FROM "tags" WHERE (LOWER("tags"."name") ILIKE 'after dinner cocktail' ESCAPE '!' OR LOWER("tags"."name") ILIKE 'strong' ESCAPE '!')))[0m
+  ↳ app/views/cocktails/index.html.erb:14
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.5ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 189], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 189], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 189], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 190], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 190], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 190], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.5ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.4ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  Rendered cocktails/index.html.erb within layouts/application (178.8ms)
+Completed 200 OK in 222ms (Views: 173.8ms | ActiveRecord: 44.8ms)
+
+
+Started GET "/" for ::1 at 2019-07-09 22:13:49 +0800
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.8ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  ↳ app/views/cocktails/index.html.erb:14
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 156], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 156], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 156], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 157], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 157], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 157], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 158], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 158], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 158], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 159], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 159], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 159], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 160], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 160], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 160], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 161], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 161], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 161], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 162], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 162], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 162], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 163], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 163], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 163], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 164], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 164], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 164], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 165], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 165], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 165], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 166], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 167], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 167], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 167], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 168], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 168], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 168], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 169], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 169], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 169], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 170], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 170], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 170], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 171], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 171], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 171], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 172], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 172], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 172], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 173], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 173], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 173], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 174], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 175], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 176], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 177], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 178], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 178], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 178], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 179], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 179], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 179], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 180], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 180], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 180], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 181], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 181], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 181], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 182], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 182], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 182], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 183], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 183], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 183], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 184], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 185], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 185], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 185], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 186], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 186], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 186], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 187], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 188], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 189], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 189], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 189], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 190], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 190], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 190], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 191], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 191], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 191], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 192], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 193], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 193], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 193], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 194], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 194], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 194], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 195], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 195], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 195], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 196], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 196], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 196], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 197], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 198], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 198], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 198], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 199], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 199], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 199], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 200], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 200], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 200], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 201], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 201], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 201], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 202], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 202], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 202], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 203], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 203], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 203], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 204], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 204], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 204], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 205], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.4ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 206], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 207], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 207], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 207], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 208], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 208], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 208], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 209], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 209], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 209], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 210], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 210], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 210], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 211], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 211], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 211], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 212], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 212], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 212], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 213], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 213], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 213], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 214], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 214], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 214], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 215], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 216], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 216], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 216], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 217], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 218], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 218], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 218], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 219], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 219], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 219], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 220], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 220], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 220], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 221], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 221], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 221], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 222], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 222], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 222], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 223], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 223], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 223], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 224], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 225], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 226], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 227], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 227], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 227], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 228], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 228], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 228], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 229], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 230], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 230], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 230], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 231], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 231], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 231], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 232], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'flavors' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 232], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:18
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'categories' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 232], ["taggable_type", "Cocktail"]]
+  ↳ app/views/cocktails/index.html.erb:21
+  Rendered cocktails/index.html.erb within layouts/application (383.5ms)
+Completed 200 OK in 409ms (Views: 287.4ms | ActiveRecord: 118.6ms)
+
+
+Started GET "/serviceworker.js" for ::1 at 2019-07-09 22:13:54 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/serviceworker.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/serviceworker.js" for ::1 at 2019-07-09 22:14:48 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/serviceworker.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/serviceworker.js" for ::1 at 2019-07-09 22:16:34 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/serviceworker.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
